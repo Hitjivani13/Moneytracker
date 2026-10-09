@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { DataProvider } from './context/DataContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
@@ -51,12 +51,12 @@ function AppContent() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ThemeProvider>
         <DataProvider>
           <AppContent />
         </DataProvider>
       </ThemeProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

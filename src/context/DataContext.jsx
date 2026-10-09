@@ -338,47 +338,11 @@ const DataContext = createContext();
 
 // ─── Provider ─────────────────────────────────────────────────────────────────
 
-const RECOVERED_AUGUST_EXPENSES = [
-  {
-    id: "7d2ff938-50d9-45ee-839d-6eb94e7dc585",
-    description: "Chai",
-    amount: 60,
-    date: "2026-08-17",
-    category: "cat-food",
-    paymentMode: "pm-cash",
-    createdAt: "2026-08-17T15:28:30.925Z"
-  },
-  {
-    id: "493fb397-a256-4c2c-8b80-4e6a249cffb8",
-    description: "Zerox",
-    amount: 10,
-    date: "2026-08-17",
-    category: "cat-education",
-    paymentMode: "pm-cash",
-    createdAt: "2026-08-17T15:28:47.285Z"
-  },
-  {
-    id: "2b311281-3e2c-44f3-b7ad-ef56fb864d99",
-    description: "Chai",
-    amount: 20,
-    date: "2026-08-18",
-    category: "cat-food",
-    paymentMode: "pm-cash",
-    createdAt: "2026-08-18T15:56:22.674Z"
-  }
-];
-
 const loadAndMigrateState = () => {
   const loaded = loadState() || defaultState;
 
   let migrated = false;
-
-  // Auto-restore recovered August expenses if expenses array is currently empty
   let expensesList = loaded.expenses || [];
-  if (expensesList.length === 0) {
-    expensesList = [...RECOVERED_AUGUST_EXPENSES];
-    migrated = true;
-  }
 
   const expenseCategories = loaded.categories?.expense || [];
   const earningCategories = loaded.categories?.earning || [];
