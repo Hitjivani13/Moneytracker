@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Home, Clock, MapPin, Settings, BarChart3, Tag, Sparkles, Flame, Skull, HandCoins, X } from 'lucide-react';
+import { Home, Clock, MapPin, Settings, BarChart3, Tag, Sparkles, HandCoins, X } from 'lucide-react';
 import { useData } from '../context/DataContext';
 
 export default function Sidebar({ isOpen, onClose }) {
@@ -10,8 +10,6 @@ export default function Sidebar({ isOpen, onClose }) {
     { path: '/history', icon: Clock, label: 'History' },
     { path: '/debts', icon: HandCoins, label: 'Udhar & Jama' },
     { path: '/analytics', icon: BarChart3, label: 'Analytics' },
-    { path: '/focus-session', icon: Flame, label: 'Focus Session' },
-    { path: '/discipline', icon: Skull, label: 'Discipline' },
     { path: '/trips', icon: MapPin, label: 'Trips' },
     { path: '/categories', icon: Tag, label: 'Categories' },
     { path: '/settings', icon: Settings, label: 'Settings' },

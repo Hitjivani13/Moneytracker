@@ -17,8 +17,6 @@ import TripDetail from './pages/TripDetail';
 import Categories from './pages/Categories';
 import Settings from './pages/Settings';
 import Analytics from './pages/Analytics';
-import FocusSession from './pages/FocusSession';
-import Discipline from './pages/Discipline';
 import Debts from './pages/Debts';
 
 function AppContent() {
@@ -43,8 +41,6 @@ function AppContent() {
             <Route path="/categories" element={<Categories />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/analytics" element={<Analytics />} />
-            <Route path="/focus-session" element={<FocusSession />} />
-            <Route path="/discipline" element={<Discipline />} />
           </Routes>
         </main>
         <BottomNav />

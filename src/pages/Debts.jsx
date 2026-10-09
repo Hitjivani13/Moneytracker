@@ -270,10 +270,10 @@ export default function Debts() {
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mb-6">
         {/* Search */}
         <div className="relative flex-1">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-400" size={18} />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-400 pointer-events-none z-10" size={18} />
           <input
             type="text"
-            className="input pl-10 text-sm"
+            className="input !pl-10 text-sm"
             placeholder="Search person or notes..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -521,14 +521,14 @@ export default function Debts() {
                 Amount (રકમ) *
               </label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-surface-400 font-bold text-sm">
+                <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-400 font-bold text-sm pointer-events-none z-10">
                   {currency}
                 </span>
                 <input
                   type="number"
                   required
                   min="1"
-                  className="input pl-8 text-sm"
+                  className="input !pl-9 text-sm"
                   placeholder="0"
                   value={form.amount}
                   onChange={(e) => setForm({ ...form, amount: e.target.value })}

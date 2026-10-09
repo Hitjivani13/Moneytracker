@@ -23,7 +23,7 @@ export default function SearchBar({
         onFocus={onFocus}
         autoFocus={autoFocus}
         placeholder={placeholder}
-        className="input pl-10 pr-10"
+        className="input !pl-10 !pr-10"
       />
 
       {/* Clear Button */}

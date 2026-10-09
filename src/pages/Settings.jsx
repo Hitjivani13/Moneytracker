@@ -11,6 +11,17 @@ import Modal from '../components/Modal';
 import { CURRENCIES, FREQUENCY_OPTIONS, KEYBOARD_SHORTCUTS } from '../utils/constants';
 import { requestNotificationPermission } from '../utils/notifications';
 
+const SectionTitle = ({ icon: Icon, title }) => (
+  <div className="flex items-center gap-3.5 mb-4 mt-10">
+    <Icon size={20} className="text-primary-500" />
+    <h2 className="font-bold text-lg dark:text-white tracking-tight">{title}</h2>
+  </div>
+);
+
+const SettingRow = ({ children, className = '' }) => (
+  <div className={`card p-6 mb-6 ${className}`}>{children}</div>
+);
+
 export default function Settings() {
   const { state, updateSettings, addRecurringTransaction, deleteRecurringTransaction,
     updateRecurringTransaction, exportData, importData, resetData, getCurrencySymbol,
@@ -137,17 +148,6 @@ export default function Settings() {
     ? state.categories.expense
     : state.categories.earning;
 
-  const SectionTitle = ({ icon: Icon, title }) => (
-    <div className="flex items-center gap-3.5 mb-4 mt-10">
-      <Icon size={20} className="text-primary-500" />
-      <h2 className="font-bold text-lg dark:text-white tracking-tight">{title}</h2>
-    </div>
-  );
-
-  const SettingRow = ({ children, className = '' }) => (
-    <div className={`card p-6 mb-6 ${className}`}>{children}</div>
-  );
-
   return (
     <div className="page-container">
       <h1 className="text-3xl font-extrabold mb-3 dark:text-white tracking-tight">Settings</h1>
@@ -202,16 +202,16 @@ export default function Settings() {
           <div>
             <label className="text-xs font-medium text-surface-500 mb-1 block">Daily Limit</label>
             <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-surface-400 font-semibold text-sm">{currency}</span>
-              <input type="number" className="input pl-8 text-sm" placeholder="0"
+              <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-400 font-semibold text-sm pointer-events-none z-10">{currency}</span>
+              <input type="number" className="input !pl-9 text-sm" placeholder="0"
                 value={dailyLimit} onChange={e => setDailyLimit(e.target.value)} />
             </div>
           </div>
           <div>
             <label className="text-xs font-medium text-surface-500 mb-1 block">Monthly Limit</label>
             <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-surface-400 font-semibold text-sm">{currency}</span>
-              <input type="number" className="input pl-8 text-sm" placeholder="0"
+              <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-400 font-semibold text-sm pointer-events-none z-10">{currency}</span>
+              <input type="number" className="input !pl-9 text-sm" placeholder="0"
                 value={monthlyLimit} onChange={e => setMonthlyLimit(e.target.value)} />
             </div>
           </div>
